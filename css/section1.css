@@ -1,7 +1,6 @@
 #section1 {
     overflow: hidden;
-    width: 100vw;
-    max-width: 1100px;
+    width: 100%;
     height: fit-content;
     margin-top: 50px;
     display: flex;
@@ -14,6 +13,8 @@
 .container-tools{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    padding: 0 10%;
     justify-content: center;
     align-items: center;
     gap: 30px;
