@@ -1,0 +1,277 @@
+header{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to top, rgba(227, 218, 199, 1), rgba(227, 218, 199, 0)),
+    url(../assets/ombrepalmier.JPG);
+    background-size: cover;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow-y: hidden; 
+    opacity: 1;
+    
+}
+
+.hero{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;   
+}
+
+.hero-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    flex: 1 0 0;
+    max-width: 90%;
+    gap: 20px;
+}
+
+.container-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 2vh;
+
+}
+
+.logo{
+    width: 100%;
+    max-width: 500px;
+
+}
+
+.main-wrapper {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+}
+
+.pictures {
+    display: flex;
+    align-items: flex-start;
+    gap: 19px;
+    overflow: hidden;
+    width: 904px;
+    height: 310px;
+    justify-content:center
+}
+
+
+.pictures_grp2{
+    display: flex;
+    width: 567px;
+    height: 310px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 21px;
+}
+
+.grp2_1{
+    display: flex;
+    width: 564px;
+    align-items: flex-start;
+    gap: 19px;
+}
+
+.grp2_2{
+    display: flex;
+    width: 564px;
+    height: 195px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+
+.img-container {
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img_pictures1{
+    object-position: 90%;
+    width: 100%; /* L'image remplit complètement le conteneur */
+    height: 100%;
+    object-fit: cover;
+}
+
+.img1{
+    width: 318px;
+    height: 310px;
+
+}
+
+.img2{
+    width: 380px;
+    height: 172px;
+
+}
+
+.img3{
+    width: 165px;
+    height: 172px;
+}
+
+.img4{
+    height: 116px;
+    align-self: stretch;
+}
+
+.img_pictures {
+    width: 100%; /* L'image remplit complètement le conteneur */
+    height: 100%;
+    object-fit: cover;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.text_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    height: 100%;
+    font-size: 1rem;
+    font-family: "Montserrat Alternates", sans-serif;
+    text-align: center;
+    color: #60591B;
+    line-height: 30px;
+}
+
+
+
+.span_thcb {
+    color: #60591B;
+    font-family: "Montserrat Alternates";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: normal;
+}
+
+
+
+
+
+
+
+@media (max-width: 1000px){
+
+    .pictures{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pictures_grp2{
+        width: fit-content;
+    }
+
+    .grp2_1{
+        width: fit-content;
+    }
+
+    .img1{
+        width: 318px;
+        height: 310px;
+    }
+
+
+    .img2{
+        width: 318px;
+        height: 310px;
+    }
+
+    .img3{
+        display: none;
+    }
+
+    .grp2_2{
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 660px) {
+
+
+    .pictures {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        width: 100%;
+    }
+
+
+    .img-container {
+        border-radius: 15px;
+        overflow: hidden;
+        width:100%;
+        height: 250px;
+        display: flex;
+        box-shadow: 7px 4px 9px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .pictures_grp2{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grp2_1{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        gap: 50px;
+        width: 100%;
+    }
+
+    .img1 {
+        display: none;
+    }
+
+    .img3{
+        display: none;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: 90%;
+        gap: 10vh;
+    }
+
+
+}

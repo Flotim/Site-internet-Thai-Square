@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.9.6/tarteaucitron.css">
+    
+    <!-- Script Tarte au Citron -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.9.6/tarteaucitron.js"></script>
+    <script type="text/javascript">
+      tarteaucitron.init({
+        "privacyUrl": "/politique-de-confidentialite", /* URL vers ta politique de confidentialité */
+        "hashtag": "#tarteaucitron",
+        "cookieName": "tarteaucitron",
+        "orientation": "bottom", /* Position de la bannière */
+        "showAlertSmall": false, /* Désactive l'icône flottante */
+        "cookieslist": true, /* Affiche la liste des cookies */
+        "showIcon": false, /* Affiche l’icône pour gérer les cookies */
+        "iconPosition": "BottomRight", /* Position de l'icône */
+        "DenyAllCta": true, /* Affiche le bouton "Refuser tout" */
+        "AcceptAllCta": true, /* Affiche le bouton "Tout accepter" */
+        "highPrivacy": true, /* Protection élevée des données */
+        "removeCredit": true /* Supprime la mention "Tarte au citron" */
+      });
+
+      // Service GTM dans Tarte au Citron
+      tarteaucitron.services.gtm = {
+        "key": "gtm",
+        "type": "api",
+        "name": "Google Tag Manager",
+        "uri": "https://policies.google.com/privacy",
+        "needConsent": true,
+        "cookies": ['_ga', '_gid', '_gat'], /* Cookies utilisés par GA4 */
+        "js": function () {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-T8GXBQCB'); // Remplace par ton ID GTM
+        }
+      };
+
+      // Ajout du service GTM à Tarte au Citron
+      tarteaucitron.job = tarteaucitron.job || [];
+      tarteaucitron.job.push('gtm');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Thaï Square - Restaurant thaïlandais et cambodgien proposant des plats de qualité. Venez déguster nos spécialités sur place ou à emporter.">
+    <meta name="keywords"
+        content="restaurant thaïlandais, cuisine asiatique, Thaï Square, Lescure-d'Albigeois, plats thaïlandais, bobun, pad thaï">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preload" as="image" href="./assets/img_salle.webp">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+
+    <title>Thaï Square - Restaurant thaïlandais et cambodgien à Albi | Cuisine asiatique </title>
+</head>
+
+
+
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8GXBQCB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header class="hero">
+        <div class="hero-container">
+            <div class="container-logo">
+                <img class="logo" src="./assets/logo horizontal_vert.png" alt="logo de Thai square" />
+            </div>
+            <div class="main-wrapper">
+                <div class="text">
+                    <div class="text_description">
+                        <p>Spécialités <span class="span_thcb">thaïlandaises</span> et <span class="span_thcb">cambodgiennes.</span> <br> Cuisine authentique et savoureuse, le tout fait  <span class="span_thcb">maison.</span>
+                        <br>Sans oublier notre <span class="span_thcb">distributeur</span> disponible 24/7 et nos plats à <span class="span_thcb">emporter.</span></p>
+                    </div>
+                </div>
+                <div class="pictures">
+                    <div class="img-container img1">
+                        <img class="img_pictures1" src="./assets/jardin.webp" alt="Image jardin du Thai square Lescure-d'Albigeois" loading="lazy">
+                    </div>
+                    <div class="pictures_grp2">
+                        <div class="grp2_1">
+                            <div class="img-container img2">
+                                <img class="img_pictures" src="./assets/img_salle.webp" alt="Salle du Thai square Lescure-d'Albigeois" loading="lazy">
+                            </div>
+                            <div class="img-container img3">
+                                <img class="img_pictures" src="./assets/personnel.webp" alt="Personnel du Thai square Lescure-d'Albigeois" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="grp2_2">
+                            <div class="img-container img4">
+                                <img class="img_pictures" src="./assets/img_plat.webp" alt="Plats thaï thai square Lescure-d'Albigeois" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section id="section1">
+            <div class="container-tools">
+                <a target="_blank" href="./assets/carte.pdf" class="tools-button tools-button-carte">
+                    Notre carte
+                </a>
+                <a target="_blank" href="./assets/carteaemporter.pdf" class="tools-button tools-button-carte">
+                    À emporter
+                </a>
+                <a href="tel:+33 05 63 55 40 19" class="tools-button tools-button-reserver">
+                    Appeler
+                </a>
+                <a target="_blank" href="https://www.google.com/maps/dir//11+Impasse+Solviel,+81380+Lescure-d'Albigeois/@43.9558195,2.0752009,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x12ade833e16daa23:0x72b261da691bbe89!2m2!1d2.1576016!2d43.9558491?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D" class="tools-button tools-button-adress">
+                    Itinéraire
+                </a>
+
+            </div>
+
+            <a class="avis" target="_blank"  href="https://www.google.com/maps/place/THAÏ+SQUARE/@43.9532133,2.1394243,14z/data=!4m8!3m7!1s0x12ade833e16daa23:0x72b261da691bbe89!8m2!3d43.9558491!4d2.1576016!9m1!1b1!16s%2Fg%2F11bw3dykg4/reviews">
+                <p>Voir les <span class="span_thcb"> avis</span></p><img class="social-media-google" src="./assets/google-brands-solid.svg" alt="avis Thai square Lescure-d'Albigeois">
+           </a>
+
+        </section>
+    </main>
+
+
+
+    <footer>
+        <img class="footer_logo" src="./assets/logo horizontal_vert.png" alt="logo du thai square">
+        <div class="footer_social-media">
+            <a href="tel:+33 05 63 55 40 19"><img class="footer_social-media-icon footer_social-media-phone"
+                    src="./assets/phone-solid.svg" alt="numéro de téléphone thai square"/>
+            </a>
+            <a href="https://www.facebook.com/thaisquarealbi/"><img
+                    class="footer_social-media-icon social-media-facebook"
+                    src="./assets/square-facebook-brands-solid.svg" alt="facebook de thai square"/>
+            </a>
+            <a href="https://www.instagram.com/explore/locations/1412406309058947/thai-square-restau/"><img
+                    class="footer_social-media-icon social-media-instagram"
+                    src="./assets/instagram-brands-solid (1).svg" alt="instagram de thai square"/>
+            </a>
+        </div>
+        <div class="footer_text">
+            <p class="nom">&copy; 2023 Thaï Square restau, tous droits réservés </p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

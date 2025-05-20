@@ -1,0 +1,42 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+*{
+    padding: 0;
+    margin:0 ;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    -webkit-user-drag: none;
+}
+
+body{
+    background-color: #E3DAC7;
+    font-family: "Montserrat Alternates", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+section{
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    transform: translateY(100px);
+}
+
+p{
+    font-weight: 300;
+}
+
+a{
+    text-decoration: none;
+}
+

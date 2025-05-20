@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://thaïsquare.fr/sitemap.xml
