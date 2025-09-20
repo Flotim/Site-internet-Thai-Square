@@ -22,3 +22,23 @@ const observer = new IntersectionObserver(
 sections.forEach(section => {
   observer.observe(section);
 });
+
+
+// Gestion de la pop-up "Laissez-nous un avis !"
+document.addEventListener("DOMContentLoaded", () => {
+  const cta = document.querySelector(".cta-avis");
+  const closeBtn = document.querySelector(".cta-avis-close");
+  const avisBtn = document.getElementById("avis");
+
+  if (!cta || !closeBtn || !avisBtn) return;
+
+  // Affiche immédiatement à l’arrivée
+  cta.style.display = "flex";
+
+
+  // Clic sur la croix → ferme la pop-up
+  closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    cta.remove();
+  });
+});

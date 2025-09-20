@@ -49,3 +49,16 @@ a{
     text-decoration: none;
 }
 
+/* Simple header for content pages */
+.simple-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: #E3DAC7; /* Match body background */
+}
+
+.simple-header .logo {
+  max-width: 300px;
+  width: 100%;
+}

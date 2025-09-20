@@ -1,0 +1,68 @@
+/* Mini pop-up flottante avec effet glass */
+.cta-avis {
+    position: fixed;
+    top: 20px;
+    z-index: 2147483646; /* reste au-dessus de tout */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 30px;
+    /* Effet glassmorphism */
+    background: rgba(255, 255, 255, 0.3); /* voile translucide */
+    backdrop-filter: blur(10px) saturate(160%);
+    -webkit-backdrop-filter: blur(10px) saturate(160%);
+    border: 1px solid #60591B;
+
+    color: #60591B;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.cta-avis:hover {
+    cursor: pointer;
+}
+  
+  .cta-avis[aria-hidden="false"] {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  .cta-avis-text {
+    white-space: nowrap;
+    color: #60591B;
+  }
+  
+  .cta-avis-arrow {
+    font-size: 20px;
+    animation: bounce 1.2s infinite;
+  }
+  
+  /* petite animation pour la flèche */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+  }
+  
+  .cta-avis-close {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: #60591B;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 2px;
+    margin-right: 5px;
+    transition: transform 0.2s ease;
+  }
+  .cta-avis-close:hover {
+    transform: scale(1.2);
+  }
+  

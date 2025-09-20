@@ -83,6 +83,26 @@
   </head>
 
   <body>
+    <!-- Mini pop-up "Laissez-nous un avis" -->
+    <div
+      class="cta-avis"
+      role="dialog"
+      aria-live="polite"
+      aria-label="Invitation à laisser un avis"
+      aria-hidden="false"
+    >
+      <button class="cta-avis-close" aria-label="Fermer la notification">
+        &times;
+      </button>
+      <a
+        href="https://www.google.com/maps/place//data=!4m3!3m2!1s0x12ade833e16daa23:0x72b261da691bbe89!12e1?source=g.page.m._&laa=merchant-review-solicitation"
+      >
+        <span class="cta-avis-text"
+          >Laissez-nous un <span class="span_thcb">avis</span> &nbsp;⭐️</span
+        ></a
+      >
+    </div>
+
     <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-T8GXBQCB"
@@ -91,6 +111,7 @@
         style="display: none; visibility: hidden"
       ></iframe
     ></noscript>
+
     <header class="hero">
       <div class="hero-container">
         <div class="container-logo">
@@ -153,6 +174,28 @@
               </div>
             </div>
           </div>
+          <a
+            href="menu.html"
+            class="tools-button tools-button-carte"
+          >
+            Notre carte
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-utensils-icon lucide-utensils"
+            >
+              <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+              <path d="M7 2v20" />
+              <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+            </svg>
+          </a>
         </div>
       </div>
     </header>
@@ -176,13 +219,6 @@
         <div class="container-tools">
           <a
             target="_blank"
-            href="./assets/carte.pdf"
-            class="tools-button tools-button-carte"
-          >
-            Notre carte
-          </a>
-          <a
-            target="_blank"
             href="./assets/carteaemporter.pdf"
             class="tools-button tools-button-carte"
           >
@@ -202,19 +238,31 @@
             Itinéraire
           </a>
         </div>
-
-        <a
-          class="avis"
-          target="_blank"
-          href="https://www.google.com/maps/place/THAÏ+SQUARE/@43.9532133,2.1394243,14z/data=!4m8!3m7!1s0x12ade833e16daa23:0x72b261da691bbe89!8m2!3d43.9558491!4d2.1576016!9m1!1b1!16s%2Fg%2F11bw3dykg4/reviews"
-        >
-          <p>Voir les <span class="span_thcb"> avis</span></p>
-          <img
-            class="social-media-google"
-            src="./assets/google-brands-solid.svg"
-            alt="avis Thai square Lescure-d'Albigeois"
-          />
-        </a>
+        <div class="separator"></div>
+        <div class="container-avis">
+          <a
+            class="avis"
+            target="_blank"
+            href="https://www.google.com/maps/place//data=!4m3!3m2!1s0x12ade833e16daa23:0x72b261da691bbe89!12e1?source=g.page.m._&laa=merchant-review-solicitation"
+            class="tools-button tools-button-avis"
+            aria-label="Mettre un avis sur Google"
+          >
+            <p>Laissez-nous un avis !</p>
+          </a>
+          <a
+            id="avis"
+            class="avis"
+            target="_blank"
+            href="https://www.google.com/maps/place/THAÏ+SQUARE/@43.9532133,2.1394243,14z/data=!4m8!3m7!1s0x12ade833e16daa23:0x72b261da691bbe89!8m2!3d43.9558491!4d2.1576016!9m1!1b1!16s%2Fg%2F11bw3dykg4/reviews"
+          >
+            <p>Voir les <span class="span_thcb"> avis</span></p>
+            <img
+              class="social-media-google"
+              src="./assets/google-brands-solid.svg"
+              alt="avis Thai square Lescure-d'Albigeois"
+            />
+          </a>
+        </div>
       </section>
     </main>
 
