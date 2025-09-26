@@ -188,10 +188,144 @@
     {name:"Cave de Labastide – Comté Tolosan Les 3 bastides (verre 15cl)", price:8.50, category:"Vins", sub:"Pichet"},
 
     // ——— Menus (affichage informatif)
-    {name:"Menu du Midi", price:16.90, category:"Menus", sub:"Midi", desc:"Entrée + Plat + Dessert. Suppléments : Boeuf Lock‑Lack +2€, riz cantonnais +1,5€. (Du lundi au vendredi, hors week‑ends & jours fériés)"},
-    {name:"Menu Kid (–10 ans)", price:10.00, category:"Menus", sub:"Enfants", desc:"2 nems + 3 beignets de poulet + riz nature ou cantonnais + 1 boule de glace (1 parfum)."},
-    {name:"Spécialité sur commande – Fondue Thaï (24h, dès 2 pers.)", price:35.00, category:"Menus", sub:"Spécialités", desc:"Assortiment viandes, fruits de mer, légumes & vermicelles – prix/pers."},
-    {name:"Menu Dégustation", price:29.00, category:"Menus", sub:"Dégustation", desc:"Assiette Dégustation, Salade Thaï fruits de mer, Potage crabe crevette, Salade boeuf nems, Pad Thaï poulet, Brochettes boeuf canard, Amok, Crevettes seiches sauce piquante, riz nature (supp riz cantonnais +1,5€), dessert au choix."},
+    // ——— Nos Menus (structure alignée au PDF/visuel)
+
+// 1) Menu du Midi (formules)
+{
+  name: "Menu du Midi",
+  price: null, // deux formules tarifaires ci-dessous
+  category: "Menus",
+  sub: "Midi",
+  desc: {
+    "Formules": [
+      "Entrée/Plat ou Plat/Dessert — 15,90€",
+      "Entrée/Plat/Dessert — 17,90€",
+      "(les midis sauf week-end & jours fériés)"
+    ],
+    "Entrées": [
+      "Nems",
+      "Salade de Nems",
+      "Salade Thaï au poulet",
+      "Bouchées vapeur (porc crevette)"
+    ],
+    "Plats": [
+      "Porc au caramel",
+      "Poulet au curry",
+      "Boeuf Lock-Lack (supp 2€)",
+      "Poisson sauce aigre douce",
+      "Accompagné de riz nature (supp 1,5€ riz cantonnais)"
+    ],
+    "Desserts": [
+      "Salade de fruits frais",
+      "Glaces (2 parfums au choix)",
+      "Nougatines",
+      "Banane Caramélisée"
+    ]
+  }
+},
+
+// 2) Spécialité sur commande — Fondue Thaï
+{
+  name: "Spécialité sur commande – Fondue Thaï",
+  price: 35.00, // prix par personne
+  category: "Menus",
+  sub: "Spécialités",
+  desc: {
+    "Notes": [
+      "24h avant",
+      "à partir de 2 personnes",
+      "Prix par personne"
+    ],
+    "Contenu": [
+      "Assortiment de viandes",
+      "Fruits de mer",
+      "Légumes",
+      "Vermicelles"
+    ]
+  }
+},
+
+// 3) Menu Dégustation
+{
+  name: "Menu Dégustation",
+  price: 29.00,
+  category: "Menus",
+  sub: "Dégustation",
+  desc: {
+    "Entrées": [
+      "Assiette Dégustation",
+      "Salade Thaï fruits de mer (🌶️)",
+      "Potage crabe crevette",
+      "Salade boeuf nems"
+    ],
+    "Plats": [
+      "Pad Thaï au poulet",
+      "Brochettes boeuf canard",
+      "Amok (🌶️)",
+      "Crevettes et seiches sauce piquante (🌶️)",
+      "Accompagné de riz nature (supp 1,5€ riz cantonnais)"
+    ],
+    "Desserts": [
+      "Raviolis de banane",
+      "Salade de fruits frais",
+      "Coupe de glace (2 parfums au choix)",
+      "Colonel"
+    ]
+  }
+},
+
+// 4) Menu Thaï Square
+{
+  name: "Menu Thaï Square",
+  price: 24.00,
+  category: "Menus",
+  sub: "Thaï Square",
+  desc: {
+    "Entrées": [
+      "Assiette composée",
+      "Salade porc nems",
+      "Salade Thaï au poulet (🌶️)",
+      "Bouchées vapeur"
+    ],
+    "Plats": [
+      "Boeuf Lock-Lack",
+      "Porc saté (🌶️) — sur plaque chauffante",
+      "Poisson sauce Thaï (🌶️)",
+      "Seiches sauce piquante (🌶️)",
+      "Accompagné de riz nature (supp 1,5€ riz cantonnais)"
+    ],
+    "Desserts": [
+      "Salade de fruits frais",
+      "Glaces (2 parfums au choix)",
+      "Banane grillée flambée (rhum ou saké — supp 1,5€)",
+      "Banane Caramélisée"
+    ]
+  }
+},
+
+// 5) Menu Kid (–10 ans)
+{
+  name: "Menu Kid (–10 ans)",
+  price: 10.00,
+  category: "Menus",
+  sub: "Enfants",
+  desc: {
+    "Entrée": [
+      "2 nems",
+      "3 beignets de poulet"
+    ],
+    "Plat": [
+      "Riz nature ou riz cantonnais"
+    ],
+    "Dessert": [
+      "Coupe de glace (1 parfum au choix)"
+    ],
+    "Notes": [
+      "Enfant de –10 ans"
+    ]
+  }
+},
+
   ];
 
   const CURRENCY = "€";
@@ -232,6 +366,7 @@
 
   // Filtres rapides : viande / boeuf / canard / épicé / sans alcool etc.
   const QUICK = [
+    {key:"menus", label:"Menus", test: it => it.category === "Menus"},
     {key:"boeuf", label:"Bœuf", test: it => /boeuf|bœuf/i.test(it.name) || it.tags?.includes("boeuf")},
     {key:"canard", label:"Canard", test: it => /canard/i.test(it.name) || it.tags?.includes("canard")},
     {key:"poulet", label:"Poulet", test: it => /poulet/i.test(it.name) || it.tags?.includes("poulet")},
@@ -263,11 +398,34 @@
   // ————————————————————————————————————————
   function cardHTML(it){
     const price = it.price!=null ? `<span class="price">${formatCurrency(it.price)}</span>` : "";
-    const desc = it.desc ? `<p class="desc">${it.desc}</p>` : "";
+    let desc = "";
+
+    if (it.desc) {
+        if (typeof it.desc === 'object' && !Array.isArray(it.desc)) {
+            // Handles Menu Dégustation and Menu du Midi
+            let objectDesc = '<div class="menu-details">';
+            for (const key in it.desc) {
+                objectDesc += `<h4>${key}</h4>`;
+                const items = it.desc[key];
+                if (Array.isArray(items)) {
+                    objectDesc += `<ul>${items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+                }
+            }
+            objectDesc += '</div>';
+            desc = objectDesc;
+        } else if (Array.isArray(it.desc)) {
+            // Fallback for any other array-based desc
+            desc = `<ul class="desc-list">${it.desc.map(d => `<li>${d}</li>`).join('')}</ul>`;
+        } else {
+            desc = `<p class="desc">${it.desc}</p>`;
+        }
+    }
+
     const tags = (it.tags||[]).map(t => `<span class="badge">${t}</span>`).join("");
     const sub = it.sub ? `<span class="sub">${it.sub}</span>` : "";
+
     return `
-    <article class="card">
+    <article class="card ${it.category === 'Menus' ? 'card-menu' : ''}">
       <div class="row">
         <h3>${it.name}</h3>
         ${price}
@@ -294,8 +452,39 @@
       list = list.filter(it => [...activeQuick].every(key => (QUICK.find(q=>q.key===key).test(it)) ));
     }
 
+    let html = "";
+    const filtersActive = needle || cat || sub || activeQuick.size > 0;
+
+    if (filtersActive) {
+      html = list.map(cardHTML).join("");
+    } else {
+      const grouped = {};
+      list.forEach(item => {
+        if (!grouped[item.category]) grouped[item.category] = {};
+        if (!grouped[item.category][item.sub]) grouped[item.category][item.sub] = [];
+        grouped[item.category][item.sub].push(item);
+      });
+
+      const orderedCategories = [...new Set(MENU.map(i => i.category))];
+
+      orderedCategories.forEach(category => {
+        if (grouped[category]) {
+          html += `<h2 class="category-title">${category}</h2>`;
+          const subcategories = grouped[category];
+          const orderedSubcategories = [...new Set(MENU.filter(i => i.category === category).map(i => i.sub))];
+
+          orderedSubcategories.forEach(subcategory => {
+            if (subcategories[subcategory]) {
+              html += `<h3 class="subcategory-title">${subcategory}</h3>`;
+              html += subcategories[subcategory].map(cardHTML).join("");
+            }
+          });
+        }
+      });
+    }
+
     if (grid) {
-      grid.innerHTML = list.map(cardHTML).join("");
+      grid.innerHTML = html;
     }
     if (count) {
       count.textContent = list.length + " élément" + (list.length>1?"s":"");

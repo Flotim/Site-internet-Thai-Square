@@ -1,70 +1,72 @@
-/*------FOOTER------*/
 
-footer{
-    position: relative;
+footer {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 1100px;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    margin-top: 60px;
-
+    justify-content: center;
+    padding: 30px 20px;
+    gap: 20px;
+    background-color: var(--paper);
+    border-top: 1px solid var(--border);
 }
 
-.footer_logo{
-    width: 150px;
-    height: 69px;
-    object-fit: contain;
+.footer_logo {
+    max-height: 50px;
+    height: auto;
 }
 
-.footer_social-media{
+.footer_social-media {
     display: flex;
-    width: 150px;
-    gap: 5vw;
+    gap: 25px;
+    align-items: center;
 }
 
-.footer_social-media-icon{
-    width: 20px;
-    height: 20px;
-    fill: #60591B;
+.footer_social-media-icon {
+    height: 24px;
+    width: 24px;
 }
 
-.footer_text{
-    width: 150px;
-
-}
-
-.footer_text p{
-    color: #000;
+.footer_text {
     text-align: center;
-    font-family: "Montserrat Alternates";
-    font-style: normal;
-    font-size: 0.5rem;
-    font-weight: 300;
-    line-height: normal;
+    font-size: 0.9rem;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
+.footer-link {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
 
+.footer-link:hover {
+    text-decoration: underline;
+}
 
-@media (max-width:660px){
-    footer{
+.footer-links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+@media (max-width: 640px) {
+    .footer-links-container {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2vh;
-        padding: 3vh;
-        
+        gap: 10px;
     }
-    
-    .footer_social-media{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1.5vh;
-    }
+}
 
-    .footer_logo{
-        height: 50px;
-    }
+.footer_logo_link {
+    line-height: 0; /* Prevents extra space under the image */
+}
+
+.credit {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 10px;
+    font-style: italic;
 }

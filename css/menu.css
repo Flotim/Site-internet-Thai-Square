@@ -124,6 +124,69 @@ input::placeholder { color: var(--muted); }
 
 .desc { color: var(--muted); margin: 0; }
 
+.menu-details h4 {
+    font-size: 1rem;
+    color: var(--ink);
+    font-weight: 700;
+    margin: 16px 0 8px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 4px;
+}
+.menu-details ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.menu-details li {
+    color: var(--muted);
+    padding: 4px 0 4px 1.2em;
+    position: relative;
+}
+.menu-details li::before {
+    content: '•';
+    color: var(--ink);
+    position: absolute;
+    left: 0;
+}
+
+.desc-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.desc-list li {
+  padding-left: 1.2em;
+  position: relative;
+  font-size: 0.9rem;
+}
+.desc-list li::before {
+  content: '•';
+  color: var(--ink);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.category-title {
+  grid-column: 1 / -1;
+  font-size: 1.8rem;
+  font-family: "Montserrat Alternates", system-ui, sans-serif;
+  color: var(--ink);
+  margin: 2rem 0 1rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.subcategory-title {
+  grid-column: 1 / -1;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 1.5rem 0 0.5rem;
+}
+
 /* Responsif */
 @media (max-width: 1024px) {
   .card { grid-column: span 6; }
