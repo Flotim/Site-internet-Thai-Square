@@ -38,7 +38,7 @@ const footerHTML = `
         <a href="mentions-legales.html" class="footer-link">Mentions Légales</a>
         <a href="politique-de-confidentialite.html" class="footer-link">Gestion des cookies</a>
     </div>
-    <p class="credit">Site créé par Timéo Bugarel</p>
+    <p class="credit"> Créé par <a target="blank" href="https://www.timeo-bugarel.fr/" class="footer-link">Timéo Bugarel</a></p>
   </div>
 </footer>
 `;
