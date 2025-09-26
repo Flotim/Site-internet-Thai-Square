@@ -1,34 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.9.6/tarteaucitron.css"
     />
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.9.6/tarteaucitron.js"
-    ></script>
-    <script type="text/javascript">
-      tarteaucitron.init({
-        privacyUrl: "/politique-de-confidentialite",
-        hashtag: "#tarteaucitron",
-        cookieName: "tarteaucitron",
-        orientation: "bottom",
-        showAlertSmall: false,
-        cookieslist: true,
-        showIcon: false,
-        iconPosition: "BottomRight",
-        DenyAllCta: true,
-        AcceptAllCta: true,
-        highPrivacy: true,
-        removeCredit: true,
-      });
-      tarteaucitron.job = tarteaucitron.job || [];
-      tarteaucitron.job.push("gtm");
-    </script>
+     <!-- Script Tarte au Citron -->
+     <script
+     type="text/javascript"
+     src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.9.6/tarteaucitron.js"
+   ></script>
+   <script type="text/javascript">
+     tarteaucitron.init({
+       privacyUrl:
+         "/politique-de-confidentialite.html" /* URL vers ta politique de confidentialité */,
+       hashtag: "#tarteaucitron",
+       cookieName: "tarteaucitron",
+       orientation: "bottom" /* Position de la bannière */,
+       showAlertSmall: false /* Désactive l'icône flottante */,
+       cookieslist: true /* Affiche la liste des cookies */,
+       showIcon: false /* Affiche l’icône pour gérer les cookies */,
+       iconPosition: "BottomRight" /* Position de l'icône */,
+       DenyAllCta: true /* Affiche le bouton "Refuser tout" */,
+       AcceptAllCta: true /* Affiche le bouton "Tout accepter" */,
+       highPrivacy: true /* Protection élevée des données */,
+       removeCredit: true /* Supprime la mention "Tarte au citron" */,
+     });
+
+     // Service GTM dans Tarte au Citron
+     tarteaucitron.services.gtm = {
+       key: "gtm",
+       type: "api",
+       name: "Google Tag Manager",
+       uri: "https://policies.google.com/privacy",
+       needConsent: true,
+       cookies: ["_ga", "_gid", "_gat"] /* Cookies utilisés par GA4 */,
+       js: function () {
+         (function (w, d, s, l, i) {
+           w[l] = w[l] || [];
+           w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+           var f = d.getElementsByTagName(s)[0],
+             j = d.createElement(s),
+             dl = l != "dataLayer" ? "&l=" + l : "";
+           j.async = true;
+           j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+           f.parentNode.insertBefore(j, f);
+         })(window, document, "script", "dataLayer", "GTM-T8GXBQCB"); // Remplace par ton ID GTM
+       },
+     };
+
+     // Ajout du service GTM à Tarte au Citron
+     tarteaucitron.job = tarteaucitron.job || [];
+     tarteaucitron.job.push("gtm");
+   </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -38,54 +63,63 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/legal.css" />
     <title>Mentions Légales - Thaï Square</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <div class="legal-container">
-            <h1>Mentions Légales</h1>
+      <div class="legal-container">
+        <h1>Mentions Légales</h1>
 
+        <h2>1. Éditeur du site</h2>
+        <p>
+          <strong>Nom du restaurant :</strong> Thaï Square<br />
+          <strong>Adresse :</strong> 11 Impasse Solviel, 81380
+          Lescure-d'Albigeois<br />
+          <strong>Téléphone :</strong> 05 63 55 40 19<br />
+          <strong>Email :</strong> serge.keo@gmail.com<br />
+          <strong>Forme juridique :</strong> SAS, société par actions
+          simplifiée<br />
+          <strong>Capital social :</strong> 10 000,00 €<br />
+          <strong>RCS :</strong> 793 995 382 R.C.S. Albi<br />
+          <strong>N° TVA intracommunautaire :</strong> FR32793995382 <br />
+        </p>
 
-            <h2>1. Éditeur du site</h2>
-            <p>
-                <strong>Nom du restaurant :</strong> Thaï Square<br>
-                <strong>Adresse :</strong> 11 Impasse Solviel, 81380 Lescure-d'Albigeois<br>
-                <strong>Téléphone :</strong> 05 63 55 40 19<br>
-                <strong>Email :</strong> serge.keo@gmail.com<br>
-                <strong>Forme juridique :</strong> SAS, société par actions simplifiée<br>
-                <strong>Capital social :</strong> 10 000,00 €<br>
-                <strong>RCS :</strong> 793 995 382 R.C.S. Albi<br>
-                <strong>N° TVA intracommunautaire :</strong> FR32793995382 <br>
-            </p>
+        <h2>2. Directeur de la publication</h2>
+        <p>
+          Le directeur de la publication est <strong>Keo Sopheak</strong>, en sa
+          qualité de gérant.
+        </p>
 
-            <h2>2. Directeur de la publication</h2>
-            <p>
-                Le directeur de la publication est <strong>Keo Sopheak</strong>, en sa qualité de gérant.
-            </p>
+        <h2>3. Hébergement</h2>
+        <p>
+          Ce site est hébergé par :<br />
+          <strong>Nom de l'hébergeur :</strong> Hostinger<br />
+          <strong>Adresse :</strong> 61 Lordou Vironos Street, 6023 Larnaca,
+          Chypre<br />
+          <strong>Contact :</strong> https://www.hostinger.fr/contact <br />
+        </p>
 
-            <h2>3. Hébergement</h2>
-            <p>
-                Ce site est hébergé par :<br>
-                <strong>Nom de l'hébergeur :</strong> Hostinger<br>
-                <strong>Adresse :</strong> 61 Lordou Vironos Street, 6023 Larnaca, Chypre<br>
-                <strong>Contact :</strong> https://www.hostinger.fr/contact <br>
-            </p>
+        <h2>4. Propriété intellectuelle</h2>
+        <p>
+          L'ensemble de ce site (contenus, textes, images, vidéos, logos)
+          constitue une œuvre protégée par la législation en vigueur sur le
+          droit d'auteur et la propriété intellectuelle. Sauf autorisation
+          écrite, toute reproduction, même partielle, est strictement interdite.
+        </p>
 
-            <h2>4. Propriété intellectuelle</h2>
-            <p>
-                L'ensemble de ce site (contenus, textes, images, vidéos, logos) constitue une œuvre protégée par la législation en vigueur sur le droit d'auteur et la propriété intellectuelle. Sauf autorisation écrite, toute reproduction, même partielle, est strictement interdite.
-            </p>
-            
-            <h2>5. Cookies</h2>
-            <p>
-              Ce site utilise des cookies pour améliorer l'expérience utilisateur et réaliser des statistiques de visites. 
-              Vous pouvez à tout moment gérer vos préférences concernant les cookies via 
-              <a target="blank" href="/politique-de-confidentialite.html">le panneau de gestion des cookies</a> accessible sur le site.
-            </p>
-            
-        </div>
+        <h2>5. Cookies</h2>
+        <p>
+          Ce site utilise des cookies pour améliorer l'expérience utilisateur et
+          réaliser des statistiques de visites. Vous pouvez à tout moment gérer
+          vos préférences concernant les cookies via
+          <a target="blank" href="/politique-de-confidentialite.html"
+            >le panneau de gestion des cookies</a
+          >
+          accessible sur le site.
+        </p>
+      </div>
     </main>
 
     <script src="script.js"></script>
     <script src="js/footer.js" defer></script>
-</body>
+  </body>
 </html>

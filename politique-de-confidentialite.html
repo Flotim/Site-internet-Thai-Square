@@ -7,27 +7,54 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.9.6/tarteaucitron.css"
     />
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.9.6/tarteaucitron.js"
-    ></script>
-    <script type="text/javascript">
-      tarteaucitron.init({
-        privacyUrl: "/politique-de-confidentialite.html",
-        hashtag: "#tarteaucitron",
-        cookieName: "tarteaucitron",
-        orientation: "bottom",
-        showAlertSmall: false,
-        cookieslist: true,
-        showIcon: false,
-        DenyAllCta: true,
-        AcceptAllCta: true,
-        highPrivacy: true,
-        removeCredit: true,
-      });
-      tarteaucitron.job = tarteaucitron.job || [];
-      tarteaucitron.job.push("gtm");
-    </script>
+        <!-- Script Tarte au Citron -->
+        <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.9.6/tarteaucitron.js"
+      ></script>
+      <script type="text/javascript">
+        tarteaucitron.init({
+          privacyUrl:
+            "/politique-de-confidentialite.html" /* URL vers ta politique de confidentialité */,
+          hashtag: "#tarteaucitron",
+          cookieName: "tarteaucitron",
+          orientation: "bottom" /* Position de la bannière */,
+          showAlertSmall: false /* Désactive l'icône flottante */,
+          cookieslist: true /* Affiche la liste des cookies */,
+          showIcon: false /* Affiche l’icône pour gérer les cookies */,
+          iconPosition: "BottomRight" /* Position de l'icône */,
+          DenyAllCta: true /* Affiche le bouton "Refuser tout" */,
+          AcceptAllCta: true /* Affiche le bouton "Tout accepter" */,
+          highPrivacy: true /* Protection élevée des données */,
+          removeCredit: true /* Supprime la mention "Tarte au citron" */,
+        });
+  
+        // Service GTM dans Tarte au Citron
+        tarteaucitron.services.gtm = {
+          key: "gtm",
+          type: "api",
+          name: "Google Tag Manager",
+          uri: "https://policies.google.com/privacy",
+          needConsent: true,
+          cookies: ["_ga", "_gid", "_gat"] /* Cookies utilisés par GA4 */,
+          js: function () {
+            (function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+              var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+              j.async = true;
+              j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+              f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-T8GXBQCB"); // Remplace par ton ID GTM
+          },
+        };
+  
+        // Ajout du service GTM à Tarte au Citron
+        tarteaucitron.job = tarteaucitron.job || [];
+        tarteaucitron.job.push("gtm");
+      </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
