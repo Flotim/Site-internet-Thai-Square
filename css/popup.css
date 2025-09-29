@@ -1,22 +1,22 @@
 /* Mini pop-up flottante avec effet glass */
 .cta-avis {
     position: fixed;
-    top: 20px;
+    top: 25px;
     z-index: 2147483646; /* reste au-dessus de tout */
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 12px 18px;
+    padding: 18px 18px;
     border-radius: 30px;
     /* Effet glassmorphism */
     background: rgba(255, 255, 255, 0.3); /* voile translucide */
     backdrop-filter: blur(10px) saturate(160%);
     -webkit-backdrop-filter: blur(10px) saturate(160%);
-    border: 1px solid #60591B;
+    border: 2px solid #60591B;
 
     color: #60591B;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     opacity: 0;
     transform: translateY(10px);
